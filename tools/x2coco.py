@@ -139,7 +139,7 @@ def deal_json(ds_type, img_path, json_path):
         label_file = osp.join(json_path, img_label + '.json')
         print('Generating dataset from:', label_file)
         image_num = image_num + 1
-        with open(label_file) as f:
+        with open(label_file, encoding="utf-8") as f:
             data = json.load(f)
             if ds_type == 'labelme':
                 images_list.append(images_labelme(data, image_num))
